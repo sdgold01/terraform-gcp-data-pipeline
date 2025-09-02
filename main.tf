@@ -27,3 +27,9 @@ resource "google_storage_bucket_iam_member" "sa_bucket_access" {
   role   = "roles/storage.objectAdmin"
   member = "serviceAccount:${google_service_account.data_pipeline_sa.email}"
 }
+
+resource "google_bigquery_dataset_iam_member" "sa_dataset_access" {
+  dataset_id = google_bigquery_dataset.analytics_dataset.dataset_id
+  role       = "roles/bigquery.dataEditor"
+  member     = "serviceAccount:${google_service_account.data_pipeline_sa.email}"
+}
