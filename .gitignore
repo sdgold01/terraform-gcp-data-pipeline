@@ -1,0 +1,14 @@
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+terraform.tfvars
+pipeline_config.json
+
+# Python / Airflow
+__pycache__/
+*.pyc
+
+# VSCode / IDE
+.vscode/
+
